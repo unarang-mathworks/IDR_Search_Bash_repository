@@ -1,0 +1,17 @@
+With Model-Based Design (MBD), virtual models are at the center of your development process to improve how you deliver complex systems.
+
+Use Model-Based Design with MATLAB® and Simulink® to shorten development cycles and reduce your development time by 50% or more.
+
+Try new ideas and perform fast repeatable tests with modeling and simulation
+Eliminate manual steps and reduce human error by automating key steps such as reporting, coding, and verification
+Create a digital thread with traceability from requirements and system architecture to component design and tests
+Perform predictive maintenance, detect faults, and optimize the system in operation using models as digital twins
+
+
+“With MathWorks tools for Model-Based Design, we have one integrated tool chain from the beginning of development to the end. We have clear traceability of requirements, and our software is more maintainable because it is implemented as a model from which we automatically generate code.”
+
+ Thomas Ehl, Continental
+ 
+ 
+ Getting Started with Model-Based Design
+Reduce the risk of slowing down development by introducing Model-Based Design in stages. Start with a single project, then build on initial success with expanded model usage and code generation. This ensures an achievable return on investment (ROI) from the beginning. 

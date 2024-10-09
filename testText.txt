@@ -1,0 +1,5 @@
+Adding a test file for text dif
+Added
+modified
+ 
+Unchanged

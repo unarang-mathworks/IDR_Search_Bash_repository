@@ -1,0 +1,8 @@
+Simulink 
+To transform development of complex systems, market-leading companies adopt Model-Based Design by systematically using models throughout the entire process.
+
+Use a virtual model to simulate and test your system early and often
+Validate your design with physical models, Hardware-in-the-Loop testing, and rapid prototyping
+Generate production-quality C, C++, CUDA, PLC, Verilog, and VHDL code and deploy directly to your embedded system
+Maintain a digital thread with traceability through requirements, system architecture, component design, code and tests
+Extend models to systems in operation to perform predictive maintenance and fault analysis sachink

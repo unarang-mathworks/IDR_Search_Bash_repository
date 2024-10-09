@@ -1,0 +1,3194 @@
+# MathWorks OPC Text Package
+Model {
+  Version  24.1
+  Description "Simulink model saved in R2024a"
+}
+__MWOPC_PACKAGE_BEGIN__ R2024a
+__MWOPC_PART_BEGIN__ /[Content_Types].xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default ContentType="application/vnd.mathworks.matlab.mxarray+binary" Extension="mxarray"/>
+  <Default ContentType="application/vnd.openxmlformats-package.relationships+xml" Extension="rels"/>
+  <Default ContentType="application/vnd.mathworks.simulink.mdl+xml" Extension="xml"/>
+  <Override ContentType="application/vnd.openxmlformats-package.core-properties+xml" PartName="/metadata/coreProperties.xml"/>
+  <Override ContentType="application/vnd.mathworks.package.coreProperties+xml" PartName="/metadata/mwcoreProperties.xml"/>
+  <Override ContentType="application/vnd.mathworks.package.corePropertiesExtension+xml" PartName="/metadata/mwcorePropertiesExtension.xml"/>
+  <Override ContentType="application/vnd.mathworks.package.corePropertiesReleaseInfo+xml" PartName="/metadata/mwcorePropertiesReleaseInfo.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.configSet+xml" PartName="/simulink/configSet0.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.configSetInfo+xml" PartName="/simulink/configSetInfo.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.graphicalInterface+xml" PartName="/simulink/graphicalInterface.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.mf0+xml" PartName="/simulink/modelDictionary.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.pluginParameters+xml" PartName="/simulink/plugins/SimscapeModelParametersPlugin.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.ScheduleCore+xml" PartName="/simulink/ScheduleCore.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.ScheduleEditor+xml" PartName="/simulink/ScheduleEditor.xml"/>
+  <Override ContentType="application/vnd.mathworks.simulink.blockDiagram+xml" PartName="/simulink/windowsInfo.xml"/>
+</Types>
+
+__MWOPC_PART_BEGIN__ /_rels/.rels
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="blockDiagram" Target="simulink/blockdiagram.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/blockDiagram"/>
+  <Relationship Id="blockDiagramDefaults" Target="simulink/bddefaults.xml" Type="http://schemas.mathworks.com/simulink/2017/relationships/blockDiagramDefaults"/>
+  <Relationship Id="configSetInfo" Target="simulink/configSetInfo.xml" Type="http://schemas.mathworks.com/simulink/2014/relationships/configSetInfo"/>
+  <Relationship Id="modelDictionary" Target="simulink/modelDictionary.xml" Type="http://schemas.mathworks.com/simulinkModel/2016/relationships/modelDictionary"/>
+  <Relationship Id="modelWorkspace" Target="simulink/modelWorkspace.mxarray" Type="http://schemas.mathworks.com/simulinkModel/2010/relationships/modelWorkspaceData"/>
+  <Relationship Id="rId1" Target="metadata/mwcoreProperties.xml" Type="http://schemas.mathworks.com/package/2012/relationships/coreProperties"/>
+  <Relationship Id="rId2" Target="metadata/mwcorePropertiesExtension.xml" Type="http://schemas.mathworks.com/package/2014/relationships/corePropertiesExtension"/>
+  <Relationship Id="rId3" Target="metadata/mwcorePropertiesReleaseInfo.xml" Type="http://schemas.mathworks.com/package/2019/relationships/corePropertiesReleaseInfo"/>
+  <Relationship Id="rId4" Target="metadata/coreProperties.xml" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties"/>
+</Relationships>
+
+__MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cp:category>model</cp:category>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2004-02-15T13:45:45Z</dcterms:created>
+  <dc:creator>The MathWorks, Inc.</dc:creator>
+  <dc:description>Thermocouple Modeling and Signal Conversion
+
+The thermocouple is one of the popular analog transducers today, along
+with other devices such as position sensors, strain gages, pressure
+transducers, and resistance temperature devices (RTDs). Operating under
+the principle of the Seebeck (or thermoelectric) effect, thermocouples
+have an empirically determined nonlinear behavior that is well known over
+each junction type's useful operating range. If you run the model, you
+will be able to see the cumulative effect of each component on dynamic
+measurement accuracy. This demonstration will focus on models for each of
+these components in a dynamic temperature measurement system for a Type S
+(Platinum-10% Rhodium(+) versus Platinum(-) ) : a thermocouple device and
+probe assembly, a signal conditioning method, an analog to digital
+converter (ADC), and a software specification for converting the ADC
+output back into a temperature value. An additional section shows how to
+obtain and use standard NIST ITS-90 thermocouple data with Simulink
+models. Look-up tables and a polynomial block are used in this design to
+capture the nonlinear behavior of the thermocouple. Note that the
+polynomial block is a viable alternative to look-up tables for some
+applications, minimizing ROM usage at the cost of some additional
+computation for the full polynomial representation.  
+</dc:description>
+  <cp:lastModifiedBy>neham</cp:lastModifiedBy>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2024-07-23T09:50:35Z</dcterms:modified>
+  <cp:revision>11.0</cp:revision>
+  <cp:version>R2024a</cp:version>
+</cp:coreProperties>
+
+__MWOPC_PART_BEGIN__ /metadata/mwcoreProperties.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<mwcoreProperties xmlns="http://schemas.mathworks.com/package/2012/coreProperties">
+  <contentType>application/vnd.mathworks.simulink.model</contentType>
+  <contentTypeFriendlyName>Simulink Model</contentTypeFriendlyName>
+  <matlabRelease>R2024a</matlabRelease>
+</mwcoreProperties>
+
+__MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesExtension.xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<mwcoreProperties xmlns="http://schemas.mathworks.com/package/2014/corePropertiesExtension">
+  <uuid>ab53452f-643e-4a76-bfe9-4ac9073eea1f</uuid>
+</mwcoreProperties>
+
+__MWOPC_PART_BEGIN__ /metadata/mwcorePropertiesReleaseInfo.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Version information for MathWorks R2024a Release -->
+<MathWorks_version_info>
+  <version>24.1.0.2673248</version>
+  <release>R2024a</release>
+  <description>Update 6</description>
+  <date>Jul 15 2024</date>
+  <checksum>3203612790</checksum>
+</MathWorks_version_info>
+
+__MWOPC_PART_BEGIN__ /simulink/_rels/blockdiagram.xml.rels
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="ScheduleCore" Target="ScheduleCore.xml" Type="http://schemas.mathworks.com/simulink/2013/relationships/ScheduleCore"/>
+  <Relationship Id="ScheduleEditor" Target="ScheduleEditor.xml" Type="http://schemas.mathworks.com/simulink/2013/relationships/ScheduleEditor"/>
+  <Relationship Id="SimscapeModelParametersPlugin" Target="plugins/SimscapeModelParametersPlugin.xml" Type="http://schemas.mathworks.com/simulinkModel/2014/relationships/pluginParameters"/>
+  <Relationship Id="graphicalInterface" Target="graphicalInterface.xml" Type="http://schemas.mathworks.com/simulinkModel/2014/relationships/graphicalInterface"/>
+  <Relationship Id="system_root" Target="systems/system_root.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="windowsInfo" Target="windowsInfo.xml" Type="http://schemas.mathworks.com/simulinkModel/2019/relationships/windowsInfo"/>
+</Relationships>
+
+__MWOPC_PART_BEGIN__ /simulink/_rels/configSetInfo.xml.rels
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="configSet0" Target="configSet0.xml" Type="http://schemas.mathworks.com/simulink/2014/relationships/configSet"/>
+</Relationships>
+
+__MWOPC_PART_BEGIN__ /simulink/bddefaults.xml
+<?xml version="1.0" encoding="utf-8"?>
+<BlockDiagramDefaults>
+  <AnnotationDefaults>
+    <P Name="HorizontalAlignment">center</P>
+    <P Name="VerticalAlignment">middle</P>
+  </AnnotationDefaults>
+  <MaskDefaults SelfModifiable="off">
+    <Display IconFrame="on" IconOpaque="opaque" RunInitForIconRedraw="analyze" IconRotate="none" PortRotate="default" IconUnits="autoscale"/>
+    <MaskParameter Evaluate="on" Tunable="on" NeverSave="off" Internal="off" ReadOnly="off" Enabled="on" Visible="on" ToolTip="on"/>
+    <DialogControl>
+      <ControlOptions Visible="on" Enabled="on" Row="new" HorizontalStretch="on" PromptLocation="top" Orientation="horizontal" Scale="linear" TextType="Plain Text" Expand="off" ShowFilter="on" ShowParameterName="on" WordWrap="on" AlignPrompts="off"/>
+    </DialogControl>
+  </MaskDefaults>
+</BlockDiagramDefaults>
+
+__MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
+<?xml version="1.0" encoding="utf-8"?>
+<ModelInformation Version="1.0">
+  <Model>
+    <P Name="ModelUUID">05daa42e-f3cc-4f22-944a-0ced630b36cb</P>
+    <P Name="StartFcn">set_param(&apos;sldemo_tc/Scope&apos;,&apos;Open&apos;,&apos;on&apos;)</P>
+    <P Name="LastSavedArchitecture">glnxa64</P>
+    <ConfigManagerSettings>
+      <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
+      <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:11.0&gt;</P>
+    </ConfigManagerSettings>
+    <EditorSettings>
+      <P Name="LibraryLinkDisplay">none</P>
+      <P Name="ShowPortUnits">on</P>
+      <P Name="ShowViewerIcons">off</P>
+      <P Name="ShowLinearizationAnnotations">off</P>
+      <P Name="BlockDescriptionStringDataTip">on</P>
+      <P Name="MultithreadedSim">on</P>
+    </EditorSettings>
+    <SimulationSettings>
+      <P Name="SimulationMode">normal</P>
+      <Object PropName="DataLoggingOverride" ObjectID="1" ClassName="Simulink.SimulationData.ModelLoggingInfo">
+        <P Name="model_" Class="char">$bdroot</P>
+        <Array PropName="logAsSpecifiedByModels_" Type="Cell" Dimension="1*1">
+          <Cell Class="char">$bdroot</Cell>
+        </Array>
+        <Array PropName="logAsSpecifiedByModelsSSIDs_" Type="Cell" Dimension="1*1">
+          <Cell Class="char"/>
+        </Array>
+      </Object>
+    </SimulationSettings>
+    <ExternalMode>
+      <P Name="ExtModeAutoUpdateStatusClock">off</P>
+    </ExternalMode>
+    <EngineSettings>
+      <P Name="ConfigurableSubsystemUsage">warning</P>
+    </EngineSettings>
+    <ConcurrentExecutionSettings>
+      <Object PropName="DataTransfer" ObjectID="2" ClassName="Simulink.GlobalDataTransfer">
+        <P Name="DefaultTransitionBetweenSyncTasks" Class="char">Ensure deterministic transfer (maximum delay)</P>
+        <P Name="DefaultTransitionBetweenAsyncTasks" Class="char">Ensure data integrity only</P>
+        <P Name="DefaultTransitionBetweenContTasks" Class="char">Ensure deterministic transfer (minimum delay)</P>
+        <P Name="DefaultExtrapolationMethodBetweenContTasks" Class="char">None</P>
+      </Object>
+    </ConcurrentExecutionSettings>
+    <System Ref="system_root"/>
+  </Model>
+</ModelInformation>
+
+__MWOPC_PART_BEGIN__ /simulink/configSet0.xml
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSet>
+  <Object Version="24.0.0" ClassName="Simulink.ConfigSet">
+    <P Name="DisabledProps" Class="double">[]</P>
+    <P Name="Description"/>
+    <Array PropName="Components" Type="Handle" Dimension="1*9">
+      <Object ObjectID="2" Version="24.0.0" ClassName="Simulink.SolverCC">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="StartTime">0.0</P>
+        <P Name="StopTime">10.0</P>
+        <P Name="AbsTol">auto</P>
+        <P Name="AutoScaleAbsTol">on</P>
+        <P Name="FixedStep">0.005</P>
+        <P Name="InitialStep">auto</P>
+        <P Name="MaxOrder">5</P>
+        <P Name="ZcThreshold">auto</P>
+        <P Name="ConsecutiveZCsStepRelTol">10*128*eps</P>
+        <P Name="MaxConsecutiveZCs">1000</P>
+        <P Name="ExtrapolationOrder">4</P>
+        <P Name="NumberNewtonIterations">1</P>
+        <P Name="MaxStep">auto</P>
+        <P Name="MinStep">auto</P>
+        <P Name="MaxConsecutiveMinStep">1</P>
+        <P Name="RelTol">1e-3</P>
+        <P Name="EnableMultiTasking">off</P>
+        <P Name="AllowMultiTaskInputOutput">off</P>
+        <P Name="ConcurrentTasks">off</P>
+        <P Name="SolverName">ode3</P>
+        <P Name="SolverJacobianMethodControl">auto</P>
+        <P Name="DaesscMode">auto</P>
+        <P Name="ShapePreserveControl">DisableAll</P>
+        <P Name="ZeroCrossControl">UseLocalSettings</P>
+        <P Name="ZeroCrossAlgorithm">Nonadaptive</P>
+        <P Name="AlgebraicLoopSolver">TrustRegion</P>
+        <P Name="SolverInfoToggleStatus">off</P>
+        <P Name="IsAutoAppliedInSIP">off</P>
+        <P Name="SolverResetMethod">Fast</P>
+        <P Name="PositivePriorityOrder">off</P>
+        <P Name="AutoInsertRateTranBlk">off</P>
+        <P Name="SampleTimeConstraint">Unconstrained</P>
+        <P Name="InsertRTBMode">Whenever possible</P>
+        <P Name="SampleTimeProperty" Class="double">[]</P>
+        <P Name="DecoupledContinuousIntegration">off</P>
+        <P Name="MinimalZcImpactIntegration">off</P>
+        <P Name="ODENIntegrationMethod">ode3</P>
+        <P Name="EnableFixedStepZeroCrossing">off</P>
+        <P Name="MaxZcPerStep">2</P>
+        <P Name="MaxZcBracketingIterations">10</P>
+      </Object>
+      <Object ObjectID="3" Version="24.0.0" ClassName="Simulink.DataIOCC">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="Decimation">1</P>
+        <P Name="ExternalInput">[t, u]</P>
+        <P Name="FinalStateName">xFinal</P>
+        <P Name="InitialState">xInitial</P>
+        <P Name="LimitDataPoints">on</P>
+        <P Name="MaxDataPoints">1000</P>
+        <P Name="LoadExternalInput">off</P>
+        <P Name="LoadInitialState">off</P>
+        <P Name="SaveFinalState">off</P>
+        <P Name="SaveOperatingPoint">off</P>
+        <P Name="SaveFormat">Array</P>
+        <P Name="SignalLoggingSaveFormat">Dataset</P>
+        <P Name="SaveOutput">off</P>
+        <P Name="SaveState">off</P>
+        <P Name="SignalLogging">on</P>
+        <P Name="DSMLogging">on</P>
+        <P Name="StreamToWks">on</P>
+        <P Name="InspectSignalLogs">off</P>
+        <P Name="VisualizeSimOutput">on</P>
+        <P Name="StreamToWorkspace">off</P>
+        <P Name="StreamVariableName">streamout</P>
+        <P Name="SaveTime">off</P>
+        <P Name="ReturnWorkspaceOutputs">on</P>
+        <P Name="StateSaveName">xout</P>
+        <P Name="TimeSaveName">tout</P>
+        <P Name="OutputSaveName">yout</P>
+        <P Name="SignalLoggingName">logsout</P>
+        <P Name="DSMLoggingName">dsmout</P>
+        <P Name="OutputOption">RefineOutputTimes</P>
+        <P Name="OutputTimes">[]</P>
+        <P Name="ReturnWorkspaceOutputsName">out</P>
+        <P Name="Refine">1</P>
+        <P Name="LoggingToFile">off</P>
+        <P Name="DatasetSignalFormat">timeseries</P>
+        <P Name="LoggingFileName">out.mat</P>
+        <P Name="LoggingIntervals">[-inf, inf]</P>
+      </Object>
+      <Object ObjectID="4" Version="24.0.0" ClassName="Simulink.OptimizationCC">
+        <Array PropName="DisabledProps" Type="Cell" Dimension="1*10">
+          <Cell Class="char">ZeroExternalMemoryAtStartup</Cell>
+          <Cell Class="char">ZeroInternalMemoryAtStartup</Cell>
+          <Cell Class="char">NoFixptDivByZeroProtection</Cell>
+          <Cell Class="char">OptimizeModelRefInitCode</Cell>
+          <Cell Class="char">BooleansAsBitfields</Cell>
+          <Cell Class="char">PassReuseOutputArgsAs</Cell>
+          <Cell Class="char">PassReuseOutputArgsThreshold</Cell>
+          <Cell Class="char">UseSpecifiedMinMax</Cell>
+          <Cell Class="char">EfficientTunableParamExpr</Cell>
+          <Cell Class="char">RemoveLocalVariableInitialization</Cell>
+        </Array>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="BlockReduction">on</P>
+        <P Name="BooleanDataType">on</P>
+        <P Name="ConditionallyExecuteInputs">on</P>
+        <P Name="DefaultParameterBehavior">Inlined</P>
+        <P Name="UseDivisionForNetSlopeComputation">off</P>
+        <P Name="GainParamInheritBuiltInType">off</P>
+        <P Name="UseFloatMulNetSlope">off</P>
+        <P Name="InheritOutputTypeSmallerThanSingle">off</P>
+        <P Name="DefaultUnderspecifiedDataType">double</P>
+        <P Name="UseSpecifiedMinMax">off</P>
+        <P Name="InlineInvariantSignals">on</P>
+        <P Name="OptimizeBlockIOStorage">on</P>
+        <P Name="BufferReuse">on</P>
+        <P Name="ReuseModelBlockBuffer">on</P>
+        <P Name="EnhancedBackFolding">off</P>
+        <P Name="CachingGlobalReferences">off</P>
+        <P Name="GlobalBufferReuse">on</P>
+        <P Name="StrengthReduction">off</P>
+        <P Name="AdvancedOptControl"/>
+        <P Name="ExpressionFolding">on</P>
+        <P Name="BooleansAsBitfields">off</P>
+        <P Name="BitfieldContainerType">uint_T</P>
+        <P Name="BitwiseOrLogicalOp">Same as modeled</P>
+        <P Name="EnableMemcpy">on</P>
+        <P Name="MemcpyThreshold">64</P>
+        <P Name="PassReuseOutputArgsAs">Structure reference</P>
+        <P Name="PassReuseOutputArgsThreshold">12</P>
+        <P Name="ExpressionDepthLimit">2147483647</P>
+        <P Name="LocalBlockOutputs">on</P>
+        <P Name="RollThreshold">5</P>
+        <P Name="StateBitsets">off</P>
+        <P Name="DataBitsets">off</P>
+        <P Name="ActiveStateOutputEnumStorageType">Native Integer</P>
+        <P Name="ZeroExternalMemoryAtStartup">on</P>
+        <P Name="ZeroInternalMemoryAtStartup">on</P>
+        <P Name="InitFltsAndDblsToZero">on</P>
+        <P Name="NoFixptDivByZeroProtection">off</P>
+        <P Name="EfficientFloat2IntCast">off</P>
+        <P Name="EfficientMapNaN2IntZero">on</P>
+        <P Name="LifeSpan">inf</P>
+        <P Name="ClockResolution">-1</P>
+        <P Name="MaxStackSize">Inherit from target</P>
+        <P Name="BufferReusableBoundary">off</P>
+        <P Name="RemoveLocalVariableInitialization">on</P>
+        <P Name="SimCompilerOptimization">off</P>
+        <P Name="AccelVerboseBuild">off</P>
+        <P Name="OptimizeBlockOrder">off</P>
+        <P Name="OptimizeDataStoreBuffers">on</P>
+        <P Name="BusAssignmentInplaceUpdate">on</P>
+        <P Name="DifferentSizesBufferReuse">off</P>
+        <P Name="UseRowMajorAlgorithm">off</P>
+        <P Name="OptimizationLevel">level2</P>
+        <P Name="OptimizationPriority">Balanced</P>
+        <P Name="OptimizationCustomize">on</P>
+        <P Name="LabelGuidedReuse">off</P>
+        <P Name="MultiThreadedLoops">off</P>
+        <P Name="AutoScheduleForLoops">off</P>
+        <P Name="DenormalBehavior">GradualUnderflow</P>
+        <P Name="EfficientTunableParamExpr">off</P>
+      </Object>
+      <Object ObjectID="5" Version="24.0.0" ClassName="Simulink.DebuggingCC">
+        <Array PropName="DisabledProps" Type="Cell" Dimension="1*1">
+          <Cell Class="char">UseOnlyExistingSharedCode</Cell>
+        </Array>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="RTPrefix">error</P>
+        <P Name="ConsistencyChecking">none</P>
+        <P Name="ArrayBoundsChecking">none</P>
+        <P Name="SignalInfNanChecking">none</P>
+        <P Name="StringTruncationChecking">error</P>
+        <P Name="SignalRangeChecking">none</P>
+        <P Name="ReadBeforeWriteMsg">UseLocalSettings</P>
+        <P Name="WriteAfterWriteMsg">UseLocalSettings</P>
+        <P Name="WriteAfterReadMsg">UseLocalSettings</P>
+        <P Name="AlgebraicLoopMsg">warning</P>
+        <P Name="ArtificialAlgebraicLoopMsg">warning</P>
+        <P Name="SaveWithDisabledLinksMsg">warning</P>
+        <P Name="SaveWithParameterizedLinksMsg">none</P>
+        <P Name="CheckSSInitialOutputMsg">on</P>
+        <P Name="UnderspecifiedInitializationDetection">Classic</P>
+        <P Name="MergeDetectMultiDrivingBlocksExec">none</P>
+        <P Name="CheckExecutionContextPreStartOutputMsg">on</P>
+        <P Name="SignalResolutionControl">TryResolveAllWithWarning</P>
+        <P Name="BlockPriorityViolationMsg">warning</P>
+        <P Name="MinStepSizeMsg">warning</P>
+        <P Name="TimeAdjustmentMsg">none</P>
+        <P Name="MaxConsecutiveZCsMsg">error</P>
+        <P Name="MaskedZcDiagnostic">warning</P>
+        <P Name="IgnoredZcDiagnostic">warning</P>
+        <P Name="SolverPrmCheckMsg">warning</P>
+        <P Name="InheritedTsInSrcMsg">warning</P>
+        <P Name="MultiTaskDSMMsg">warning</P>
+        <P Name="MultiTaskCondExecSysMsg">none</P>
+        <P Name="MultiTaskRateTransMsg">error</P>
+        <P Name="SingleTaskRateTransMsg">none</P>
+        <P Name="TasksWithSamePriorityMsg">warning</P>
+        <P Name="ExportedTasksRateTransMsg">none</P>
+        <P Name="SigSpecEnsureSampleTimeMsg">warning</P>
+        <P Name="CheckMatrixSingularityMsg">none</P>
+        <P Name="IntegerOverflowMsg">warning</P>
+        <P Name="Int32ToFloatConvMsg">warning</P>
+        <P Name="ParameterDowncastMsg">error</P>
+        <P Name="ParameterOverflowMsg">error</P>
+        <P Name="ParameterUnderflowMsg">none</P>
+        <P Name="ParameterPrecisionLossMsg">warning</P>
+        <P Name="ParamSuppressDoubleToSinglePrecisionLossMsg">off</P>
+        <P Name="ParamPrecisionLossAbsoluteDiffThreshold">0.0</P>
+        <P Name="ParamPrecisionLossRelativeDiffThreshold">0.0</P>
+        <P Name="ParamOverflowErrorThreshold">OneBit</P>
+        <P Name="ParameterTunabilityLossMsg">warning</P>
+        <P Name="FixptConstUnderflowMsg">none</P>
+        <P Name="FixptConstOverflowMsg">none</P>
+        <P Name="FixptConstPrecisionLossMsg">none</P>
+        <P Name="UnderSpecifiedDataTypeMsg">none</P>
+        <P Name="UnnecessaryDatatypeConvMsg">none</P>
+        <P Name="VectorMatrixConversionMsg">none</P>
+        <P Name="FcnCallInpInsideContextMsg">warning</P>
+        <P Name="SignalLabelMismatchMsg">none</P>
+        <P Name="UnconnectedInputMsg">warning</P>
+        <P Name="UnconnectedOutputMsg">warning</P>
+        <P Name="UnconnectedLineMsg">warning</P>
+        <P Name="UseOnlyExistingSharedCode">error</P>
+        <P Name="SFcnCompatibilityMsg">none</P>
+        <P Name="FrameProcessingCompatibilityMsg">error</P>
+        <P Name="UniqueDataStoreMsg">none</P>
+        <P Name="BusObjectLabelMismatch">none</P>
+        <P Name="RootOutportRequireBusObject">warning</P>
+        <P Name="AssertControl">UseLocalSettings</P>
+        <P Name="AllowSymbolicDim">on</P>
+        <P Name="RowMajorDimensionSupport">off</P>
+        <P Name="ModelReferenceMultiInstanceNormalModeStructChecksumCheck">error</P>
+        <P Name="ModelReferenceVersionMismatchMessage">none</P>
+        <P Name="ModelReferenceIOMismatchMessage">none</P>
+        <P Name="UnknownTsInhSupMsg">warning</P>
+        <P Name="ModelReferenceDataLoggingMessage">warning</P>
+        <P Name="ModelReferenceNoExplicitFinalValueMsg">none</P>
+        <P Name="ModelReferenceSymbolNameMessage">warning</P>
+        <P Name="StateNameClashWarn">warning</P>
+        <P Name="OperatingPointInterfaceChecksumMismatchMsg">warning</P>
+        <P Name="NonCurrentReleaseOperatingPointMsg">error</P>
+        <P Name="PregeneratedLibrarySubsystemCodeDiagnostic">warning</P>
+        <P Name="SubsystemReferenceDiagnosticForUnitTest">error</P>
+        <P Name="MatchCodeGenerationContextForUpdateDiagram">none</P>
+        <P Name="InitInArrayFormatMsg">warning</P>
+        <P Name="StrictBusMsg">ErrorLevel1</P>
+        <P Name="BusNameAdapt">WarnAndRepair</P>
+        <P Name="NonBusSignalsTreatedAsBus">none</P>
+        <P Name="SymbolicDimMinMaxWarning">warning</P>
+        <P Name="LossOfSymbolicDimsSimulationWarning">warning</P>
+        <P Name="LossOfSymbolicDimsCodeGenerationWarning">error</P>
+        <P Name="SymbolicDimsDataTypeCodeGenerationDiagnostic">error</P>
+        <P Name="BlockIODiagnostic">none</P>
+        <P Name="SFUnusedDataAndEventsDiag">warning</P>
+        <P Name="SFUnexpectedBacktrackingDiag">warning</P>
+        <P Name="SFInvalidInputDataAccessInChartInitDiag">warning</P>
+        <P Name="SFNoUnconditionalDefaultTransitionDiag">warning</P>
+        <P Name="SFTransitionOutsideNaturalParentDiag">warning</P>
+        <P Name="SFUnreachableExecutionPathDiag">warning</P>
+        <P Name="SFUndirectedBroadcastEventsDiag">warning</P>
+        <P Name="SFTransitionActionBeforeConditionDiag">warning</P>
+        <P Name="SFOutputUsedAsStateInMooreChartDiag">error</P>
+        <P Name="SFTemporalDelaySmallerThanSampleTimeDiag">warning</P>
+        <P Name="SFSelfTransitionDiag">warning</P>
+        <P Name="SFExecutionAtInitializationDiag">none</P>
+        <P Name="IntegerSaturationMsg">warning</P>
+        <P Name="AllowedUnitSystems">all</P>
+        <P Name="UnitsInconsistencyMsg">warning</P>
+        <P Name="AllowAutomaticUnitConversions">on</P>
+        <P Name="RCSCRenamedMsg">warning</P>
+        <P Name="RCSCObservableMsg">warning</P>
+        <P Name="ForceCombineOutputUpdateInSim">off</P>
+        <P Name="UnitDatabase"/>
+        <P Name="UnderSpecifiedDimensionMsg">none</P>
+        <P Name="DebugExecutionForFMUViaOutOfProcess">off</P>
+        <P Name="ArithmeticOperatorsInVariantConditions">warning</P>
+        <P Name="VariantConditionMismatch">none</P>
+        <P Name="InheritVATfromSVC">warning</P>
+        <P Name="VariantConfigNotUsedByTopModel">warning</P>
+        <P Name="ParamWriterValidationControl">UseLocalSettings</P>
+      </Object>
+      <Object ObjectID="6" Version="24.0.0" ClassName="Simulink.HardwareCC">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="ProdBitPerChar">8</P>
+        <P Name="ProdBitPerShort">16</P>
+        <P Name="ProdBitPerInt">32</P>
+        <P Name="ProdBitPerLong">32</P>
+        <P Name="ProdBitPerLongLong">64</P>
+        <P Name="ProdBitPerFloat">32</P>
+        <P Name="ProdBitPerDouble">64</P>
+        <P Name="ProdBitPerPointer">32</P>
+        <P Name="ProdBitPerSizeT">32</P>
+        <P Name="ProdBitPerPtrDiffT">32</P>
+        <P Name="ProdLargestAtomicInteger">Char</P>
+        <P Name="ProdLargestAtomicFloat">None</P>
+        <P Name="ProdIntDivRoundTo">Floor</P>
+        <P Name="ProdEndianess">LittleEndian</P>
+        <P Name="ProdWordSize">32</P>
+        <P Name="ProdShiftRightIntArith">on</P>
+        <P Name="ProdLongLongMode">off</P>
+        <P Name="ProdHWDeviceType">32-bit xPC Target (AMD Athlon)</P>
+        <P Name="TargetBitPerChar">8</P>
+        <P Name="TargetBitPerShort">16</P>
+        <P Name="TargetBitPerInt">32</P>
+        <P Name="TargetBitPerLong">32</P>
+        <P Name="TargetBitPerLongLong">64</P>
+        <P Name="TargetBitPerFloat">32</P>
+        <P Name="TargetBitPerDouble">64</P>
+        <P Name="TargetBitPerPointer">32</P>
+        <P Name="TargetBitPerSizeT">32</P>
+        <P Name="TargetBitPerPtrDiffT">32</P>
+        <P Name="TargetLargestAtomicInteger">Char</P>
+        <P Name="TargetLargestAtomicFloat">None</P>
+        <P Name="TargetShiftRightIntArith">on</P>
+        <P Name="TargetLongLongMode">off</P>
+        <P Name="TargetIntDivRoundTo">Undefined</P>
+        <P Name="TargetEndianess">Unspecified</P>
+        <P Name="TargetWordSize">32</P>
+        <P Name="TargetPreprocMaxBitsSint">32</P>
+        <P Name="TargetPreprocMaxBitsUint">32</P>
+        <P Name="TargetHWDeviceType">Specified</P>
+        <P Name="TargetUnknown">off</P>
+        <P Name="ProdEqTarget">on</P>
+        <P Name="UseEmbeddedCoderFeatures">on</P>
+        <P Name="UseSimulinkCoderFeatures">on</P>
+        <P Name="HardwareBoardFeatureSet">EmbeddedCoderHSP</P>
+      </Object>
+      <Object ObjectID="7" Version="24.0.0" ClassName="Simulink.ModelReferenceCC">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="UpdateModelReferenceTargets">IfOutOfDateOrStructuralChange</P>
+        <P Name="EnableRefExpFcnMdlSchedulingChecks">on</P>
+        <P Name="CheckModelReferenceTargetMessage">error</P>
+        <P Name="EnableParallelModelReferenceBuilds">off</P>
+        <P Name="ParallelModelReferenceErrorOnInvalidPool">on</P>
+        <P Name="ParallelModelReferenceMATLABWorkerInit">None</P>
+        <P Name="ModelReferenceNumInstancesAllowed">Multi</P>
+        <P Name="PropagateVarSize">Infer from blocks in model</P>
+        <P Name="ModelDependencies"> </P>
+        <P Name="ModelReferencePassRootInputsByReference">on</P>
+        <P Name="ModelReferenceMinAlgLoopOccurrences">off</P>
+        <P Name="PropagateSignalLabelsOutOfModel">off</P>
+        <P Name="SupportModelReferenceSimTargetCustomCode">off</P>
+        <P Name="UseModelRefSolver">off</P>
+      </Object>
+      <Object ObjectID="8" Version="24.0.0" ClassName="Simulink.SFSimCC">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description"/>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="SimCustomSourceCode"/>
+        <P Name="SimCustomHeaderCode"/>
+        <P Name="SimCustomInitializer"/>
+        <P Name="SimCustomTerminator"/>
+        <P Name="SimReservedNameArray" Class="double">[]</P>
+        <P Name="SimUserSources"/>
+        <P Name="SimUserIncludeDirs"/>
+        <P Name="SimUserLibraries"/>
+        <P Name="SimUserDefines"/>
+        <P Name="SimCustomCompilerFlags"/>
+        <P Name="SimCustomLinkerFlags"/>
+        <P Name="SFSimEcho">on</P>
+        <P Name="SimCtrlC">on</P>
+        <P Name="SimIntegrity">on</P>
+        <P Name="SimUseLocalCustomCode">off</P>
+        <P Name="SimParseCustomCode">on</P>
+        <P Name="SimAnalyzeCustomCode">off</P>
+        <P Name="SimDebugExecutionForCustomCode">off</P>
+        <P Name="SimGenImportedTypeDefs">off</P>
+        <P Name="ModelFunctionsGlobalVisibility">on</P>
+        <P Name="CompileTimeRecursionLimit">50</P>
+        <P Name="EnableRuntimeRecursion">on</P>
+        <P Name="EnableImplicitExpansion">on</P>
+        <P Name="MATLABDynamicMemAlloc">on</P>
+        <P Name="MATLABDynamicMemAllocThreshold">65536</P>
+        <P Name="LegacyBehaviorForPersistentVarInContinuousTime">off</P>
+        <P Name="CustomCodeFunctionArrayLayout" Class="double">[]</P>
+        <P Name="DefaultCustomCodeFunctionArrayLayout">NotSpecified</P>
+        <P Name="CustomCodeUndefinedFunction">UseInterfaceOnly</P>
+        <P Name="CustomCodeGlobalsAsFunctionIO">off</P>
+        <P Name="DefaultCustomCodeDeterministicFunctions">None</P>
+        <P Name="CustomCodeDeterministicFunctions"/>
+        <P Name="SimHardwareAcceleration">generic</P>
+        <P Name="SimTargetLang">C</P>
+        <P Name="GPUAcceleration">off</P>
+        <P Name="SimGPUMallocThreshold">200</P>
+        <P Name="SimGPUStackLimitPerThread">1024</P>
+        <P Name="SimGPUErrorChecks">off</P>
+        <P Name="SimGPUCustomComputeCapability"/>
+        <P Name="SimGPUCompilerFlags"/>
+        <P Name="SimDLTargetLibrary">mkl-dnn</P>
+        <P Name="SimDLAutoTuning">on</P>
+      </Object>
+      <Object BackupClass="Simulink.RTWCC" ObjectID="9" Version="24.0.0" ClassName="Simulink.RTWCC">
+        <Array PropName="DisabledProps" Type="Cell" Dimension="1*18">
+          <Cell Class="char">IncludeHyperlinkInReport</Cell>
+          <Cell Class="char">GenerateTraceInfo</Cell>
+          <Cell Class="char">GenerateTraceReport</Cell>
+          <Cell Class="char">GenerateTraceReportSl</Cell>
+          <Cell Class="char">GenerateTraceReportSf</Cell>
+          <Cell Class="char">GenerateTraceReportEml</Cell>
+          <Cell Class="char">PortableWordSizes</Cell>
+          <Cell Class="char">GenerateWebview</Cell>
+          <Cell Class="char">GenerateCodeMetricsReport</Cell>
+          <Cell Class="char">GenerateCodeReplacementReport</Cell>
+          <Cell Class="char">GenerateMissedCodeReplacementReport</Cell>
+          <Cell Class="char">GenerateErtSFunction</Cell>
+          <Cell Class="char">CreateSILPILBlock</Cell>
+          <Cell Class="char">CodeProfilingInstrumentation</Cell>
+          <Cell Class="char">DataTypeReplacement</Cell>
+          <Cell Class="char">HalideCodeGeneration</Cell>
+          <Cell Class="char">CodeStackProfiling</Cell>
+          <Cell Class="char">EmbeddedCoderDictionary</Cell>
+        </Array>
+        <P Name="Description"/>
+        <P Name="SystemTargetFile">grt.tlc</P>
+        <P Name="EmbeddedCoderDictionary"/>
+        <P Name="HardwareBoard">None</P>
+        <P Name="ShowCustomHardwareApp">off</P>
+        <P Name="ShowEmbeddedHardwareApp">off</P>
+        <P Name="TLCOptions"/>
+        <P Name="GenCodeOnly">on</P>
+        <P Name="MakeCommand">make_rtw</P>
+        <P Name="GenerateMakefile">on</P>
+        <P Name="PackageGeneratedCodeAndArtifacts">off</P>
+        <P Name="PackageName"/>
+        <P Name="TemplateMakefile">grt_default_tmf</P>
+        <P Name="PostCodeGenCommand"/>
+        <P Name="GenerateReport">off</P>
+        <P Name="RTWVerbose">on</P>
+        <P Name="RetainRTWFile">off</P>
+        <P Name="RTWBuildHooks" Class="double">[]</P>
+        <P Name="ProfileTLC">off</P>
+        <P Name="TLCDebug">off</P>
+        <P Name="TLCCoverage">off</P>
+        <P Name="TLCAssert">off</P>
+        <P Name="BuiltinFFTWCallback">off</P>
+        <P Name="RTWUseLocalCustomCode">off</P>
+        <P Name="RTWUseSimCustomCode">off</P>
+        <P Name="CustomSourceCode"/>
+        <P Name="CustomHeaderCode"/>
+        <P Name="CustomInclude"/>
+        <P Name="CustomSource"/>
+        <P Name="CustomLibrary"/>
+        <P Name="CustomDefine"/>
+        <P Name="CustomBLASCallback"/>
+        <P Name="CustomLAPACKCallback"/>
+        <P Name="CustomFFTCallback"/>
+        <P Name="CustomInitializer"/>
+        <P Name="CustomTerminator"/>
+        <P Name="Toolchain">Automatically locate an installed toolchain</P>
+        <P Name="BuildConfiguration">Faster Builds</P>
+        <P Name="CustomToolchainOptions" Class="double">[]</P>
+        <P Name="IncludeHyperlinkInReport">off</P>
+        <P Name="LaunchReport">off</P>
+        <P Name="PortableWordSizes">off</P>
+        <P Name="CreateSILPILBlock">None</P>
+        <P Name="CodeExecutionProfiling">off</P>
+        <P Name="CodeExecutionProfileVariable">executionProfile</P>
+        <P Name="CodeProfilingSaveOptions">SummaryOnly</P>
+        <P Name="CodeProfilingInstrumentation">off</P>
+        <P Name="CodeStackProfiling">off</P>
+        <P Name="CodeStackProfileVariable">stackProfile</P>
+        <P Name="SILPILDebugging">off</P>
+        <P Name="RemoveFixptWordSizeChecks">off</P>
+        <P Name="DataTypeReplacement">CoderTypedefs</P>
+        <P Name="CoderTypedefsCompatibility">off</P>
+        <P Name="TargetLang">C</P>
+        <P Name="GenerateGPUCode">None</P>
+        <P Name="HalideCodeGeneration">off</P>
+        <P Name="IncludeBusHierarchyInRTWFileBlockHierarchyMap">off</P>
+        <P Name="GenerateTraceInfo">off</P>
+        <P Name="GenerateTraceReport">off</P>
+        <P Name="GenerateTraceReportSl">off</P>
+        <P Name="GenerateTraceReportSf">off</P>
+        <P Name="GenerateTraceReportEml">off</P>
+        <P Name="GenerateWebview">off</P>
+        <P Name="GenerateCodeMetricsReport">off</P>
+        <P Name="GenerateCodeReplacementReport">off</P>
+        <P Name="GenerateMissedCodeReplacementReport">off</P>
+        <P Name="RTWCompilerOptimization">off</P>
+        <P Name="ObjectivePriorities" Class="double">[]</P>
+        <P Name="RTWCustomCompilerOptimizations"/>
+        <P Name="CheckMdlBeforeBuild">Off</P>
+        <P Name="SharedConstantsCachingThreshold">1024</P>
+        <P Name="GPUKernelNamePrefix"/>
+        <P Name="GPUDeviceID">-1</P>
+        <P Name="GPUMallocMode">discrete</P>
+        <P Name="GPUMallocThreshold">200</P>
+        <P Name="GPUEnableMemoryManager">off</P>
+        <P Name="GPUStackLimitPerThread">1024</P>
+        <P Name="GPUcuBLAS">on</P>
+        <P Name="GPUcuSOLVER">on</P>
+        <P Name="GPUcuFFT">on</P>
+        <P Name="GPUErrorChecks">off</P>
+        <P Name="GPUComputeCapability">3.5</P>
+        <P Name="GPUCustomComputeCapability"/>
+        <P Name="GPUCompilerFlags"/>
+        <P Name="GPUMaximumBlocksPerKernel">0</P>
+        <P Name="DLTargetLibrary">none</P>
+        <P Name="DLAutoTuning">on</P>
+        <P Name="DLDataType">fp32</P>
+        <P Name="DLArmComputeVersion">20.02.1</P>
+        <P Name="DLArmComputeArch">unspecified</P>
+        <P Name="DLLearnablesCompression">None</P>
+        <P Name="LargeConstantGeneration">KeepInSourceFiles</P>
+        <P Name="LargeConstantThreshold">131072</P>
+        <Array PropName="Components" Type="Handle" Dimension="1*2">
+          <Object ObjectID="10" Version="24.0.0" ClassName="Simulink.CodeAppCC">
+            <Array PropName="DisabledProps" Type="Cell" Dimension="1*29">
+              <Cell Class="char">IgnoreCustomStorageClasses</Cell>
+              <Cell Class="char">InsertBlockDesc</Cell>
+              <Cell Class="char">SFDataObjDesc</Cell>
+              <Cell Class="char">SimulinkDataObjDesc</Cell>
+              <Cell Class="char">DefineNamingRule</Cell>
+              <Cell Class="char">SignalNamingRule</Cell>
+              <Cell Class="char">ParamNamingRule</Cell>
+              <Cell Class="char">InlinedPrmAccess</Cell>
+              <Cell Class="char">CustomSymbolStr</Cell>
+              <Cell Class="char">IgnoreTestpoints</Cell>
+              <Cell Class="char">InsertPolySpaceComments</Cell>
+              <Cell Class="char">MATLABFcnDesc</Cell>
+              <Cell Class="char">InternalIdentifier</Cell>
+              <Cell Class="char">CustomSymbolStrGlobalVar</Cell>
+              <Cell Class="char">CustomSymbolStrType</Cell>
+              <Cell Class="char">CustomSymbolStrField</Cell>
+              <Cell Class="char">CustomSymbolStrFcn</Cell>
+              <Cell Class="char">CustomSymbolStrModelFcn</Cell>
+              <Cell Class="char">CustomSymbolStrFcnArg</Cell>
+              <Cell Class="char">CustomSymbolStrBlkIO</Cell>
+              <Cell Class="char">CustomSymbolStrTmpVar</Cell>
+              <Cell Class="char">CustomSymbolStrMacro</Cell>
+              <Cell Class="char">CustomSymbolStrUtil</Cell>
+              <Cell Class="char">CustomSymbolStrEmxType</Cell>
+              <Cell Class="char">CustomSymbolStrEmxFcn</Cell>
+              <Cell Class="char">CustomUserTokenString</Cell>
+              <Cell Class="char">ReqsInCode</Cell>
+              <Cell Class="char">BlockCommentType</Cell>
+              <Cell Class="char">AnnotationsInComments</Cell>
+            </Array>
+            <P Name="Description"/>
+            <P Name="Components" Class="double">[]</P>
+            <P Name="Comment"/>
+            <P Name="ForceParamTrailComments">off</P>
+            <P Name="GenerateComments">on</P>
+            <P Name="CommentStyle">Auto</P>
+            <P Name="IgnoreCustomStorageClasses">on</P>
+            <P Name="IgnoreTestpoints">off</P>
+            <P Name="MaxIdLength">31</P>
+            <P Name="PreserveName">off</P>
+            <P Name="PreserveNameWithParent">off</P>
+            <P Name="ShowEliminatedStatement">off</P>
+            <P Name="OperatorAnnotations">off</P>
+            <P Name="SimulinkDataObjDesc">off</P>
+            <P Name="SFDataObjDesc">off</P>
+            <P Name="MATLABFcnDesc">off</P>
+            <P Name="MangleLength">1</P>
+            <P Name="SharedChecksumLength">8</P>
+            <P Name="CustomSymbolStrGlobalVar">$R$N$M</P>
+            <P Name="CustomSymbolStrType">$N$R$M_T</P>
+            <P Name="CustomSymbolStrField">$N$M</P>
+            <P Name="CustomSymbolStrFcn">$R$N$M$F</P>
+            <P Name="CustomSymbolStrModelFcn">$R$N</P>
+            <P Name="CustomSymbolStrFcnArg">rt$I$N$M</P>
+            <P Name="CustomSymbolStrBlkIO">rtb_$N$M</P>
+            <P Name="CustomSymbolStrTmpVar">$N$M</P>
+            <P Name="CustomSymbolStrMacro">$R$N$M</P>
+            <P Name="CustomSymbolStrUtil">$N$C</P>
+            <P Name="CustomSymbolStrEmxType">emxArray_$M$N</P>
+            <P Name="CustomSymbolStrEmxFcn">emx$M$N</P>
+            <P Name="CustomUserTokenString"/>
+            <P Name="CustomCommentsFcn"/>
+            <P Name="DefineNamingRule">None</P>
+            <P Name="DefineNamingFcn"/>
+            <P Name="ParamNamingRule">None</P>
+            <P Name="ParamNamingFcn"/>
+            <P Name="SignalNamingRule">None</P>
+            <P Name="SignalNamingFcn"/>
+            <P Name="InsertBlockDesc">off</P>
+            <P Name="InsertPolySpaceComments">off</P>
+            <P Name="SimulinkBlockComments">on</P>
+            <P Name="BlockCommentType">BlockPathComment</P>
+            <P Name="StateflowObjectComments">on</P>
+            <P Name="MATLABSourceComments">off</P>
+            <P Name="EnableCustomComments">off</P>
+            <P Name="InternalIdentifierFile"/>
+            <P Name="InternalIdentifier">Shortened</P>
+            <P Name="InlinedPrmAccess">Literals</P>
+            <P Name="ReqsInCode">off</P>
+            <P Name="UseSimReservedNames">off</P>
+            <P Name="ReservedNameArray" Class="double">[]</P>
+            <P Name="EnumMemberNameClash">error</P>
+          </Object>
+          <Object BackupClass="Simulink.TargetCC" ObjectID="11" Version="24.0.0" ClassName="Simulink.GRTTargetCC">
+            <Array PropName="DisabledProps" Type="Cell" Dimension="1*20">
+              <Cell Class="char">IncludeMdlTerminateFcn</Cell>
+              <Cell Class="char">RemoveResetFunc</Cell>
+              <Cell Class="char">SuppressErrorStatus</Cell>
+              <Cell Class="char">ERTCustomFileBanners</Cell>
+              <Cell Class="char">GenerateSampleERTMain</Cell>
+              <Cell Class="char">MultiInstanceERTCode</Cell>
+              <Cell Class="char">PurelyIntegerCode</Cell>
+              <Cell Class="char">SupportNonInlinedSFcns</Cell>
+              <Cell Class="char">SupportComplex</Cell>
+              <Cell Class="char">SupportAbsoluteTime</Cell>
+              <Cell Class="char">SupportContinuousTime</Cell>
+              <Cell Class="char">ExistingSharedCode</Cell>
+              <Cell Class="char">GenerateTestInterfaces</Cell>
+              <Cell Class="char">ModelStepFunctionPrototypeControlCompliant</Cell>
+              <Cell Class="char">GenerateAllocFcn</Cell>
+              <Cell Class="char">RemoveDisableFunc</Cell>
+              <Cell Class="char">PreserveStateflowLocalDataDimensions</Cell>
+              <Cell Class="char">ParenthesesLevel</Cell>
+              <Cell Class="char">ERTMultiwordTypeDef</Cell>
+              <Cell Class="char">MultiwordTypeDef</Cell>
+            </Array>
+            <P Name="Description"/>
+            <P Name="Components" Class="double">[]</P>
+            <P Name="TargetFcnLib">iso_tfl_tmw.mat</P>
+            <P Name="TargetLibSuffix"/>
+            <P Name="TargetPreCompLibLocation"/>
+            <P Name="GenFloatMathFcnCalls">NOT IN USE</P>
+            <P Name="TargetLangStandard">C99 (ISO)</P>
+            <P Name="CodeReplacementLibrary">None</P>
+            <P Name="UtilityFuncGeneration">Auto</P>
+            <P Name="MultiwordTypeDef">System defined</P>
+            <P Name="MultiwordLength">2048</P>
+            <P Name="DynamicStringBufferSize">256</P>
+            <P Name="GenerateFullHeader">on</P>
+            <P Name="InferredTypesCompatibility">off</P>
+            <P Name="ExistingSharedCode"/>
+            <P Name="GenerateSampleERTMain">off</P>
+            <P Name="GenerateTestInterfaces">off</P>
+            <P Name="ModelReferenceCompliant">on</P>
+            <P Name="ParMdlRefBuildCompliant">on</P>
+            <P Name="CompOptLevelCompliant">on</P>
+            <P Name="ConcurrentExecutionCompliant">on</P>
+            <P Name="IncludeMdlTerminateFcn">on</P>
+            <P Name="CombineOutputUpdateFcns">off</P>
+            <P Name="CombineSignalStateStructs">off</P>
+            <P Name="GroupInternalDataByFunction">off</P>
+            <P Name="SuppressErrorStatus">off</P>
+            <P Name="IncludeFileDelimiter">Auto</P>
+            <P Name="ERTCustomFileBanners">off</P>
+            <P Name="SupportAbsoluteTime">on</P>
+            <P Name="LogVarNameModifier">rt_</P>
+            <P Name="MatFileLogging">on</P>
+            <P Name="CodeInterfacePackaging">Nonreusable function</P>
+            <P Name="PurelyIntegerCode">off</P>
+            <P Name="SupportNonFinite">on</P>
+            <P Name="SupportComplex">on</P>
+            <P Name="SupportContinuousTime">on</P>
+            <P Name="SupportNonInlinedSFcns">on</P>
+            <P Name="RemoveDisableFunc">off</P>
+            <P Name="RemoveResetFunc">off</P>
+            <P Name="SupportVariableSizeSignals">off</P>
+            <P Name="ParenthesesLevel">Nominal</P>
+            <P Name="CastingMode">Nominal</P>
+            <P Name="MATLABClassNameForMDSCustomization">Simulink.SoftwareTarget.GRTCustomization</P>
+            <P Name="ModelStepFunctionPrototypeControlCompliant">off</P>
+            <P Name="CPPClassGenCompliant">on</P>
+            <P Name="AutosarCompliant">off</P>
+            <P Name="MDXCompliant">off</P>
+            <P Name="GRTInterface">on</P>
+            <P Name="GenerateAllocFcn">off</P>
+            <P Name="UseToolchainInfoCompliant">on</P>
+            <P Name="GenerateSharedConstants">on</P>
+            <P Name="CoderGroups" Class="double">[]</P>
+            <P Name="AccessMethods" Class="double">[]</P>
+            <P Name="LookupTableObjectStructAxisOrder">1,2,3,4,...</P>
+            <P Name="LUTObjectStructOrderExplicitValues">Size,Breakpoints,Table</P>
+            <P Name="LUTObjectStructOrderEvenSpacing">Size,Breakpoints,Table</P>
+            <P Name="ArrayLayout">Column-major</P>
+            <P Name="UnsupportedSFcnMsg">error</P>
+            <P Name="ERTHeaderFileRootName">$R$E</P>
+            <P Name="ERTSourceFileRootName">$R$E</P>
+            <P Name="ERTDataFileRootName">$R_data</P>
+            <Array PropName="InstructionSetExtensions" Type="Cell" Dimension="1*1">
+              <Cell Class="char">None</Cell>
+            </Array>
+            <P Name="InstructionSetFMA">off</P>
+            <P Name="OptimizeReductions">off</P>
+            <P Name="HeaderGuardPrefix"/>
+            <P Name="LogToMDFFile">off</P>
+            <P Name="UseMalloc">off</P>
+            <P Name="ExtMode">off</P>
+            <P Name="ExtModeStaticAlloc">off</P>
+            <P Name="ExtModeTesting">off</P>
+            <P Name="ExtModeAutomaticAllocSize">on</P>
+            <P Name="ExtModeMaxTrigDuration">10</P>
+            <P Name="ExtModeStaticAllocSize">1000000</P>
+            <P Name="ExtModeTransport">0</P>
+            <P Name="ExtModeMexFile">ext_comm</P>
+            <P Name="ExtModeMexArgs"/>
+            <P Name="ExtModeIntrfLevel">Level1</P>
+            <P Name="RTWCAPISignals">off</P>
+            <P Name="RTWCAPIParams">off</P>
+            <P Name="RTWCAPIStates">off</P>
+            <P Name="RTWCAPIRootIO">off</P>
+            <P Name="GenerateASAP2">off</P>
+            <P Name="MultiInstanceErrorCode">Error</P>
+          </Object>
+        </Array>
+      </Object>
+      <Object ObjectID="12" Version="24.0.0" ClassName="SlCovCC.ConfigComp">
+        <P Name="DisabledProps" Class="double">[]</P>
+        <P Name="Description">Simulink Coverage Configuration Component</P>
+        <P Name="Components" Class="double">[]</P>
+        <P Name="Name">Simulink Coverage</P>
+        <P Name="CovEnable">off</P>
+        <P Name="CovScope">EntireSystem</P>
+        <P Name="CovIncludeTopModel">on</P>
+        <P Name="RecordCoverage">off</P>
+        <P Name="CovPath">/</P>
+        <P Name="CovSaveName">covdata</P>
+        <P Name="CovCompData"/>
+        <P Name="CovMetricSettings">dw</P>
+        <P Name="CovFilter"/>
+        <P Name="CovHTMLOptions"/>
+        <P Name="CovNameIncrementing">off</P>
+        <P Name="CovForceBlockReductionOff">on</P>
+        <P Name="CovEnableCumulative">on</P>
+        <P Name="CovSaveCumulativeToWorkspaceVar">on</P>
+        <P Name="CovSaveSingleToWorkspaceVar">on</P>
+        <P Name="CovCumulativeVarName">covCumulativeData</P>
+        <P Name="CovCumulativeReport">off</P>
+        <P Name="CovSaveOutputData">on</P>
+        <P Name="CovOutputDir">slcov_output/$ModelName$</P>
+        <P Name="CovDataFileName">$ModelName$_cvdata</P>
+        <P Name="CovReportOnPause">on</P>
+        <P Name="CovModelRefEnable">off</P>
+        <P Name="CovModelRefExcluded"/>
+        <P Name="CovExternalEMLEnable">off</P>
+        <P Name="CovSFcnEnable">on</P>
+        <P Name="CovBoundaryAbsTol">1e-05</P>
+        <P Name="CovBoundaryRelTol">0.01</P>
+        <P Name="CovUseTimeInterval">off</P>
+        <P Name="CovStartTime">0</P>
+        <P Name="CovStopTime">0</P>
+        <P Name="CovMcdcMode">Masking</P>
+        <P Name="CovExcludeInactiveVariants">off</P>
+      </Object>
+    </Array>
+    <P Name="Name">Configuration</P>
+    <P Name="CurrentDlgPage">Solver</P>
+    <P Name="ConfigPrmDlgPosition">[ 520, 285, 1400, 915 ]</P>
+    <P Name="ExtraOptions">-aInitFltsAndDblsToZero=1 </P>
+  </Object>
+</ConfigSet>
+
+__MWOPC_PART_BEGIN__ /simulink/configSetInfo.xml
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigSetInfo>
+  <ConfigSet PartName="/simulink/configSet0.xml" Active="true">Configuration</ConfigSet>
+</ConfigSetInfo>
+
+__MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
+<?xml version="1.0" encoding="utf-8"?>
+<GraphicalInterface>
+  <P Name="NumRootInports">0</P>
+  <P Name="NumRootOutports">0</P>
+  <P Name="ParameterArgumentNames"/>
+  <P Name="NumModelReferences">0</P>
+  <P Name="NumTestPointedSignals">0</P>
+  <P Name="NumProvidedFunctions">0</P>
+  <P Name="NumRequiredFunctions">0</P>
+  <P Name="NumResetEvents">0</P>
+  <P Name="HasInitializeEvent">0</P>
+  <P Name="HasTerminateEvent">0</P>
+  <P Name="NumDataStoreReferences">0</P>
+  <P Name="PreCompExecutionDomainType">Unset</P>
+  <P Name="UseModelRefSolver">0</P>
+  <P Name="SolverName">ode3</P>
+  <P Name="IsExportFunctionModel">0</P>
+  <P Name="SimulinkSubDomainType">Simulink</P>
+  <P Name="NumParameterArguments">0</P>
+  <P Name="NumExternalFileReferences">1</P>
+  <ExternalFileReference>
+    <P Name="Reference">simulink_extras/Additional
+Discrete/Idealized ADC quantizer</P>
+    <P Name="Path">$bdroot/2 ADC  input and hardware model/Idealized ADC quantizer</P>
+    <P Name="SID">11</P>
+    <P Name="Type">LIBRARY_BLOCK</P>
+  </ExternalFileReference>
+  <P Name="OrderedModelArguments">1</P>
+</GraphicalInterface>
+
+__MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2023a_20220628">
+  <System type="System" uuid="40c281c4-4bec-43cd-92ad-7b5b1fb120f7">
+    <Parameter type="Parameter" uuid="d0173364-f615-4768-8168-b5471051746e">
+      <Identifier>TypeS_E_Volts</Identifier>
+      <Name>TypeS_E_Volts</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="9ae7427b-17a2-4cc0-ae77-d42c12ece592">
+      <Identifier>TypeS_T_degC</Identifier>
+      <Name>TypeS_T_degC</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="dc64cc4d-3430-4eaf-8b24-165bcda4c7e5">
+      <Identifier>TypeS_bits_bp</Identifier>
+      <Name>TypeS_bits_bp</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="e11c6835-c506-43c6-88c8-d7c39b34cb97">
+      <Identifier>TypeS_tdegc_interp</Identifier>
+      <Name>TypeS_tdegc_interp</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="4b5f3cd6-274b-4c6a-a98f-75cd66b8e3d0">
+      <Identifier>TypeS_tdegc_vs_bits</Identifier>
+      <Name>TypeS_tdegc_vs_bits</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="fe849568-69e7-4f0f-b2b6-d003da3867c6">
+      <Identifier>e_vs_counts</Identifier>
+      <Name>e_vs_counts</Name>
+    </Parameter>
+    <Interface type="Interface" uuid="eb49867a-11fb-4a4c-80f6-73b9dc212eec"/>
+  </System>
+</MF0>
+__MWOPC_PART_BEGIN__ /simulink/modelWorkspace.mxarray BASE64
+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
+xeqPMAxYgj/9LmzNVl6CP4dtizIbZII/EKyql99pgj9K8IY0KnCCP9MuppnudYI/XW3F/rJ7gj+X
+saGb/YGCPyDwwADCh4I/WTSdnQyOgj/icrwC0ZOCP22x22eVmYI/pfW3BOCfgj8vNNdppKWCP2l4
+swbvq4I/8rbSa7Oxgj979fHQd7eCP7Q5zm3CvYI/P3jt0obDgj93vMlv0cmCPwH76NSVz4I/OT/F
+ceDVgj/EfeTWpNuCP028Azxp4YI/hgDg2LPngj8QP/89eO2CP0mD29rC84I/08H6P4f5gj8LBtfc
+0f+CP5ZE9kGWBYM/z4jS3uALgz9Yx/FDpRGDP5ILzuDvF4M/G0rtRbQdgz+liAyreCODP93M6EfD
+KYM/aAsIrYcvgz+hT+RJ0jWDPyqOA6+WO4M/Y9LfS+FBgz/tEP+wpUeDPyZV203wTYM/r5P6srRT
+gz/p19ZP/1mDP3MW9rTDX4M/q1rSUQ5mgz81mfG20muDP27dzVMdcoM/+BvtuOF3gz8xYMlVLH6D
+P7qe6Lrwg4M/9OLEVzuKgz99IeS8/4+DP7ZlwFlKloM/8Kmc9pScgz956LtbWaKDP7IsmPijqIM/
+PGu3XWiugz91r5P6srSDP/7tsl93uoM/NzKP/MHAgz/CcK5hhsaDP/q0iv7QzIM/M/lmmxvTgz++
+N4YA4NiDP/Z7Yp0q34M/gLqBAu/kgz+5/l2fOeuDP0M9fQT+8IM/fIFZoUj3gz+0xTU+k/2DPz8E
+VaNXA4Q/eEgxQKIJhD8Bh1ClZg+EPzrLLEKxFYQ/dA8J3/sbhD/9TShEwCGEPzaSBOEKKIQ/wNAj
+Rs8thD/5FADjGTSEPzJZ3H9kOoQ/vJf75ChAhD/129eBc0aEP34a9+Y3TIQ/t17Tg4JShD/xoq8g
+zViEP3rhzoWRXoQ/syWrItxkhD/taYe/JmuEP3aopiTrcIQ/r+yCwTV3hD/pMF9egH2EP3JvfsNE
+g4Q/q7NaYI+JhD/j9zb92Y+EP242VmKelYQ/p3oy/+ibhD/fvg6cM6KEP2r9LQH4p4Q/o0EKnkKu
+hD/bheY6jbSEP2XEBaBRuoQ/ngjiPJzAhD/XTL7Z5saEP2GL3T6rzIQ/ms+52/XShD/TE5Z4QNmE
+P11Std0E34Q/lpaRek/lhD/P2m0XmuuEPwgfSrTk8YQ/kl1pGan3hD/LoUW28/2EPwTmIVM+BIU/
+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
+AAAAAABgcEAAAAAAAHBwQAAAAAAAgHBAAAAAAACQcEAAAAAAAKBwQAAAAAAAsHBAAAAAAADAcEAA
+AAAAANBwQAAAAAAA4HBAAAAAAADwcEAAAAAAAABxQAAAAAAAEHFAAAAAAAAgcUAAAAAAADBxQAAA
+AAAAQHFAAAAAAABQcUAAAAAAAGBxQAAAAAAAcHFAAAAAAACAcUAAAAAAAJBxQAAAAAAAoHFAAAAA
+AACwcUAAAAAAAMBxQAAAAAAA0HFAAAAAAADgcUAAAAAAAPBxQAAAAAAAAHJAAAAAAAAQckAAAAAA
+ACByQAAAAAAAMHJAAAAAAABAckAAAAAAAFByQAAAAAAAYHJAAAAAAABwckAAAAAAAIByQAAAAAAA
+kHJAAAAAAACgckAAAAAAALByQAAAAAAAwHJAAAAAAADQckAAAAAAAOByQAAAAAAA8HJAAAAAAAAA
+c0AAAAAAABBzQAAAAAAAIHNAAAAAAAAwc0AAAAAAAEBzQAAAAAAAUHNAAAAAAABgc0AAAAAAAHBz
+QAAAAAAAgHNAAAAAAACQc0AAAAAAAKBzQAAAAAAAsHNAAAAAAADAc0AAAAAAANBzQAAAAAAA4HNA
+AAAAAADwc0AAAAAAAAB0QAAAAAAAEHRAAAAAAAAgdEAAAAAAADB0QAAAAAAAQHRAAAAAAABQdEAA
+AAAAAGB0QAAAAAAAcHRAAAAAAACAdEAAAAAAAJB0QAAAAAAAoHRAAAAAAACwdEAAAAAAAMB0QAAA
+AAAA0HRAAAAAAADgdEAAAAAAAPB0QAAAAAAAAHVAAAAAAAAQdUAAAAAAACB1QAAAAAAAMHVAAAAA
+AABAdUAAAAAAAFB1QAAAAAAAYHVAAAAAAABwdUAAAAAAAIB1QAAAAAAAkHVAAAAAAACgdUAAAAAA
+ALB1QAAAAAAAwHVAAAAAAADQdUAAAAAAAOB1QAAAAAAA8HVAAAAAAAAAdkAAAAAAABB2QAAAAAAA
+IHZAAAAAAAAwdkAAAAAAAEB2QAAAAAAAUHZAAAAAAABgdkAAAAAAAHB2QAAAAAAAgHZAAAAAAACQ
+dkAAAAAAAKB2QAAAAAAAsHZAAAAAAADAdkAAAAAAANB2QAAAAAAA4HZAAAAAAADwdkAAAAAAAAB3
+QAAAAAAAEHdAAAAAAAAgd0AAAAAAADB3QAAAAAAAQHdAAAAAAABQd0AAAAAAAGB3QAAAAAAAcHdA
+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
+bqVrQ74tbENgwWxDkEttQ8vObUMFUm5DQNVuQ3tYb0O1229DzmpwQ3D+cEPXgXFDEgVyQ0yIckOH
+C3NDwo5zQzwUdEPep3RD5DR1Qx64dUNZO3ZDlL52Q85Bd0MJxXdDREh4Q37LeEO5TnlD9NF5Q9Rf
+ekN283pDFXh7Q1D7e0OLfnxDxQF9QwCFfUM7CH5DdYt+Q7AOf0PrkX9DkwqAQzBMgEOHj4BDWNmA
+Q0EfgUPeYIFDfKKBQxnkgUO2JYJDVGeCQ/GogkOO6oJDLCyDQ8ltg0Nmr4NDBPGDQ6EyhEM+dIRD
+3LWEQ3n3hEMWOYVDtHqFQ1G8hUPu/YVDjD+GQymBhkPGwoZDZASHQwFGh0Oeh4dDPMmHQzQMiEMF
+VohDTJyIQ+rdiEOHH4lDJGGJQ8KiiUNf5IlD/CWKQ5pnikM3qYpD1OqKQ3Isi0MPbotDrK+LQ0rx
+i0PQLYxD3miMQ+mnjEOG6YxDJCuNQ8FsjUNero1D/O+NQ5kxjkM2c45D1LSOQ3H2jkMOOI9DrHmP
+Q0m7j0Pm/I9DhD6QQyGAkEO+wZBDXAORQ/lEkUOWhpFDNMiRQ9EJkkNuS5JDDI2SQ6nOkkNGEJND
+5FGTQ46Rk0ObzJNDgwiUQyBKlEO9i5RDW82UQ/gOlUOVUJVDM5KVQ9DTlUNtFZZDC1eWQ6iYlkNF
+2pZD4xuXQ4Bdl0MBnJdDDteXQx8UmEO8VZhDWpeYQ/fYmEOUGplDMlyZQ8+dmUNs35lDCiGaQ6di
+mkOkoJpDstuaQ0YZm0PkWptDgZybQx7em0O8H5xDWWGcQ/ainEOU5JxDXyKdQ21dnUMzm51D0Nyd
+Q20enkMLYJ5DqKGeQ0XjnkPjJJ9DgGafQxqkn0Mo359DHx2gQ7xeoENaoKBD9+GgQ5QjoUMyZaFD
+7qKhQ/vdoUPRG6JDbl2iQwyfokOp4KJDRiKjQ+Rjo0PBoaNDztyjQ4MapEMgXKRDvZ2kQ1vfpEOs
+HaVDulilQ/qVpUOX16VDNBmmQ9JapkNvnKZDDN6mQ38cp0ONV6dDrJSnQ0nWp0PmF6hDhFmoQ2qY
+qEN406hDIxCpQ8BRqUNdk6lD+9SpQ1YUqkNjT6pDmouqQzfNqkPUDqtDclCrQ0GQq0NOy6tDEQes
+Q65IrENMiqxD6cusQywMrUM6R61DiIKtQyXErUPDBa5DYEeuQxeIrkMlw65DMv6uQ5w/r0Maga9D
+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
++6nxCKgyQA
+__MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
+<?xml version="1.0" encoding="utf-8"?>
+<SimscapeModelParametersPlugin>
+  <P Name="SimscapeDaeAutoSolver">ode23t</P>
+</SimscapeModelParametersPlugin>
+
+__MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2023a_202209151115">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="63f79ccc-666e-4797-bf0d-976b68896cb3">
+    <defaultEventBehavior type="sltp.mm.core.EventBehavior" uuid="bbdf385d-fe6a-47f8-80e7-ae53cfde722f"/>
+    <editorState type="sltp.mm.core.EditorState" uuid="d5a07f22-fc63-4564-9387-72b24bbea668">
+      <panelState type="sltp.mm.core.EditorPanelState" uuid="7721d329-bdb0-4b3c-b19c-087c7686cab9"/>
+    </editorState>
+    <rootTask type="sltp.mm.core.Task" uuid="d174f132-dd9b-44cf-bae1-4b4a633a75f2">
+      <context type="sltp.mm.core.Context" uuid="63f79ccc-666e-4797-bf0d-976b68896cb3"/>
+      <explicit>false</explicit>
+      <name>Default</name>
+      <priority>-2147483648</priority>
+      <subgraph type="sltp.mm.core.Graph" uuid="98eb1548-86a2-4f9e-ac8e-61f9ca0efbec"/>
+    </rootTask>
+  </sltp.mm.core.Context>
+</sltp_graph>
+__MWOPC_PART_BEGIN__ /simulink/ScheduleEditor.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_editor version="1.1" packageUris="http://schema.mathworks.com/mf0/DiagramEditor/R2019a_20181107 http://schema.mathworks.com/mf0/SltpSyntax/R2023b_202303220000">
+  <diagram.editor.model.Diagram type="diagram.editor.model.Diagram" uuid="6b29333f-c664-4884-8007-8a9d5e21f63b">
+    <position>0,0</position>
+    <size>0,0,0,0</size>
+    <syntaxElement type="sltp.mm.syntax.Graph" uuid="df477204-7b94-4a4c-bd3b-49c53b203269"/>
+    <title>Default</title>
+    <type>graph.Graph</type>
+  </diagram.editor.model.Diagram>
+  <sltp.mm.syntax.Context type="sltp.mm.syntax.Context" uuid="cbbd9258-49fd-4838-a6d9-02f155d08b6a">
+    <rootGraph type="sltp.mm.syntax.Graph" uuid="df477204-7b94-4a4c-bd3b-49c53b203269">
+      <priorityDirection>HighNumberFirst</priorityDirection>
+      <title>Default</title>
+      <diagramElement type="diagram.editor.model.Diagram" uuid="6b29333f-c664-4884-8007-8a9d5e21f63b"/>
+    </rootGraph>
+  </sltp.mm.syntax.Context>
+</sltp_editor>
+__MWOPC_PART_BEGIN__ /simulink/systems/_rels/system_root.xml.rels
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="system_1" Target="system_1.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_16" Target="system_16.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_27" Target="system_27.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_33" Target="system_33.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_35" Target="system_35.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_37" Target="system_37.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+  <Relationship Id="system_7" Target="system_7.xml" Type="http://schemas.mathworks.com/simulink/2010/relationships/system"/>
+</Relationships>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_1.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[306, 45, 1158, 839]</P>
+  <Block BlockType="Inport" Name="T_actual" SID="2">
+    <P Name="Position">[55, 93, 85, 107]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="Unit">degC</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">T_actual</P>
+        <P Name="PropagatedSignals">T_actual</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="TransferFcn" Name="Thermocouple probe &#xA;time constant is 30 msec" SID="3">
+    <P Name="Position">[205, 78, 265, 122]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="Denominator">[0.03 1]</P>
+  </Block>
+  <Block BlockType="Polyval" Name="Type S&#xA;thermocouple&#xA;polynomial model" SID="4">
+    <P Name="Description">           0 deg C ice reference         
+      microVolts = f(Temperature degC)   
+(Segment 1) input range: -50 to 1063 degC</P>
+    <P Name="Position">[365, 77, 445, 123]</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="AttributesFormatString">%&lt;Description&gt;</P>
+    <P Name="Coefs">[ +2.71443176145e-021, -1.25068871393e-017, +2.55744251786e-014, -3.31465196389e-011, +3.22028823036e-008, -2.32477968689e-005, +1.25934289740e-002, +5.40313308631e+000, +0.00000000000e+000 ]</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">E_tc_uVolts</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="E_tc" SID="6">
+    <P Name="Position">[710, 93, 740, 107]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="Unit">uV</P>
+    <P Name="VectorParamsAs1DForOutWhenUnconnected">off</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">3#out:1</P>
+    <P Name="Dst">4#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">T_actual</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Labels">[1, 0]</P>
+    <P Name="Src">2#out:1</P>
+    <P Name="Dst">3#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">E_tc_uVolts</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">4#out:1</P>
+    <P Name="Dst">6#in:1</P>
+  </Line>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_16.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[347, 45, 1199, 839]</P>
+  <Block BlockType="Inport" Name="E_bits" SID="17">
+    <P Name="Position">[50, 153, 80, 167]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="OutDataTypeStr">uint16</P>
+    <P Name="Unit">count</P>
+    <P Name="SignalType">real</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="Data Type&#xA;Conversion" SID="18">
+    <P Name="Position">[150, 272, 205, 298]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="OutDataTypeStr">single</P>
+    <P Name="RndMeth">Floor</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="LookupNDDirect" Name="Type S&#xA;direct&#xA;conversion" SID="19">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[265, 132, 320, 188]</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="AttributesFormatString">(%&lt;mxTable&gt;)</P>
+    <P Name="NumberOfTableDimensions">1</P>
+    <P Name="Table">TypeS_tdegc_vs_bits</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">Tmeas_direct</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Lookup_n-D" Name="Type S&#xA;interpolated&#xA;conversion" SID="20">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[265, 259, 320, 311]</P>
+    <P Name="ZOrder">-4</P>
+    <P Name="AttributesFormatString">(%&lt;tableData&gt;)</P>
+    <P Name="InputPortMap">u0</P>
+    <P Name="NumberOfTableDimensions">1</P>
+    <P Name="BreakpointsForDimension1">TypeS_bits_bp</P>
+    <P Name="IndexSearchMethod">Linear search</P>
+    <P Name="BeginIndexSearchUsingPreviousIndexResult">on</P>
+    <P Name="Table">TypeS_tdegc_interp</P>
+    <P Name="ExtrapMethod">Clip</P>
+    <P Name="DiagnosticForOutOfRangeInput">Warning</P>
+    <P Name="InternalRulePriority">Speed</P>
+    <P Name="RndMeth">Simplest</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">Tmeas_interp</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="Tmeas_direct" SID="21">
+    <P Name="Position">[675, 153, 755, 167]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="ShowName">off</P>
+    <P Name="IconDisplay">Port number and signal name</P>
+    <P Name="Unit">degC</P>
+    <P Name="VectorParamsAs1DForOutWhenUnconnected">off</P>
+  </Block>
+  <Block BlockType="Outport" Name="Tmeas_interp" SID="22">
+    <P Name="Position">[670, 278, 750, 292]</P>
+    <P Name="ZOrder">-6</P>
+    <P Name="ShowName">off</P>
+    <P Name="Port">2</P>
+    <P Name="IconDisplay">Port number and signal name</P>
+    <P Name="Unit">degC</P>
+    <P Name="VectorParamsAs1DForOutWhenUnconnected">off</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">17#out:1</P>
+    <P Name="Points">[35, 0]</P>
+    <Branch>
+      <P Name="ZOrder">2</P>
+      <P Name="Dst">19#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">3</P>
+      <P Name="Points">[0, 125]</P>
+      <P Name="Dst">18#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">Tmeas_direct</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">19#out:1</P>
+    <P Name="Dst">21#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">18#out:1</P>
+    <P Name="Dst">20#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Tmeas_interp</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">20#out:1</P>
+    <P Name="Dst">22#in:1</P>
+  </Line>
+  <Annotation SID="23">
+    <P Name="Name">Input: 0 to 4095 integer &quot;counts&quot; , where
+            0        counts corresponds to 0 input volts and -0.236 thermocouple millivolts
+            4096 counts corresponds to 5 input volts and 18.661 thermocouple millivolts</P>
+    <P Name="Position">[46, 27, 683, 86]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="24">
+    <P Name="Name">Tables derived from ITS-90 thermocouple reference data
+from NIST Standard Database 60 related to NIST Monograph 175 (ITS-90).
+
+</P>
+    <P Name="Position">[57, 361, 614, 439]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ForegroundColor">blue</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="25">
+    <P Name="Name">Direct look-up table is fast and has no numerical precision issues, 
+but requires 4096 data points in table</P>
+    <P Name="Position">[338, 187, 691, 217]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+  </Annotation>
+  <Annotation SID="26">
+    <P Name="Name">Interpolated table look-up uses far fewer data points, 
+but loses some accuracy and requires more computation.</P>
+    <P Name="Position">[344, 310, 650, 340]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ZOrder">-4</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_27.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[64, 148, 758, 807]</P>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_33.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[399, 244, 945, 779]</P>
+  <Annotation SID="34">
+    <P Name="Name">This block intentionally has no contents.</P>
+    <P Name="Position">[82, 62, 354, 80]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">14</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_35.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[399, 244, 945, 779]</P>
+  <Annotation SID="36">
+    <P Name="Name">This block intentionally has no contents.</P>
+    <P Name="Position">[82, 62, 354, 80]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">14</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_37.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[399, 244, 945, 779]</P>
+  <Annotation SID="38">
+    <P Name="Name">This block intentionally has no contents.</P>
+    <P Name="Position">[82, 62, 354, 80]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">14</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_7.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[306, 45, 1158, 839]</P>
+  <Block BlockType="Inport" Name="E_tc_Volts" SID="8">
+    <P Name="Position">[50, 63, 80, 77]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="Unit">V</P>
+  </Block>
+  <Block BlockType="TransferFcn" Name="Anti-aliasing filter" SID="9">
+    <P Name="Description">Designed using Signal Processing Toolbox command:
+&gt;&gt; [num,den] = butter(3,15*2*pi,&apos;low&apos;,&apos;s&apos;)       </P>
+    <P Name="Position">[100, 210, 615, 260]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="AttributesFormatString">%&lt;Description&gt;</P>
+    <P Name="Numerator">8.371694703680943e+005</P>
+    <P Name="Denominator">[ 1, 1.884955592153875e+002, 1.776528792196083e+004, 8.371694703680943e+005 ]</P>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="Clocked&#xA;Sample and Hold" SID="10">
+    <P Name="Position">[260, 406, 295, 444]</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="AttributesFormatString">(%&lt;SampleTime&gt; sec)</P>
+    <P Name="SampleTime">0.020</P>
+  </Block>
+  <Block BlockType="Reference" Name="Idealized ADC quantizer" SID="11">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[375, 400, 435, 450]</P>
+    <P Name="ZOrder">-4</P>
+    <P Name="AttributesFormatString">(settings: %&lt;NumberOfConverterBits&gt;-bit converter\nVmin: %&lt;Vmin&gt;, Vmax: %&lt;Vmax&gt;)</P>
+    <P Name="LibraryVersion">1.66</P>
+    <P Name="SourceBlock">simulink_extras/Additional
+Discrete/Idealized ADC quantizer</P>
+    <P Name="SourceType">IdealADC</P>
+    <P Name="SourceProductName">Simulink</P>
+    <InstanceData>
+      <P Name="ContentPreviewEnabled">off</P>
+      <P Name="NumberOfConverterBits">12</P>
+      <P Name="Vmin">0</P>
+      <P Name="Vmax">5</P>
+      <P Name="OutputDataType">uint16</P>
+      <P Name="OutputNegativeValues">off</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Bias" Name="analog&#xA;bias" SID="12">
+    <P Name="Position">[210, 53, 295, 87]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="Bias">0.000236</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Gain" Name="analog scaling gain for &#xA;0-5 Volts full scale range&#xA;(ignore amplifier dynamics)" SID="13">
+    <P Name="Position">[370, 38, 540, 102]</P>
+    <P Name="ZOrder">-6</P>
+    <P Name="Gain">5/(0.018661+0.000236)</P>
+  </Block>
+  <Block BlockType="Outport" Name="bits" SID="14">
+    <P Name="Position">[660, 418, 690, 432]</P>
+    <P Name="ZOrder">-7</P>
+    <P Name="Unit">count</P>
+    <P Name="VectorParamsAs1DForOutWhenUnconnected">off</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">13#out:1</P>
+    <P Name="Points">[100, 0; 0, 90; -570, 0; 0, 75]</P>
+    <P Name="Dst">9#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">8#out:1</P>
+    <P Name="Dst">12#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">10#out:1</P>
+    <P Name="Dst">11#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">11#out:1</P>
+    <P Name="Dst">14#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">12#out:1</P>
+    <P Name="Dst">13#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">9#out:1</P>
+    <P Name="Points">[25, 0; 0, 100; -570, 0; 0, 90]</P>
+    <P Name="Dst">10#in:1</P>
+  </Line>
+  <Annotation SID="15">
+    <P Name="Name">12 bits in full scale range corresponds to
+an LSB size on the order of ~0.5 degC and 
+an in-range error of ~0.25 degC.</P>
+    <P Name="Position">[442, 359, 687, 403]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ForegroundColor">blue</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[58, 135, 910, 865]</P>
+  <P Name="Open">on</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">50</P>
+  <Block BlockType="SubSystem" Name="1 Type S&#xA;Thermocouple&#xA;model" SID="1">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[220, 145, 300, 215]</P>
+    <P Name="ZOrder">-1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">E</P>
+        <P Name="PropagatedSignals">E_tc_uVolts</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_1"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="2 ADC &#xA;input and hardware&#xA;model" SID="7">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[380, 144, 475, 216]</P>
+    <P Name="ZOrder">-2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">bits</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_7"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="3 Software specification&#xA;for converting&#xA;ADC values to temperature" SID="16">
+    <PortCounts in="1" out="2"/>
+    <P Name="Position">[520, 140, 605, 215]</P>
+    <P Name="ZOrder">-3</P>
+    <System Ref="system_16"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="More Info" SID="27">
+    <PortCounts/>
+    <P Name="Position">[95, 30, 118, 50]</P>
+    <P Name="ZOrder">-4</P>
+    <P Name="DropShadow">on</P>
+    <P Name="ShowName">off</P>
+    <P Name="OpenFcn">showExample(&apos;simulink_general/sldemo_tc_scriptExample&apos;)</P>
+    <Mask>
+      <Display RunInitForIconRedraw="off">disp(&apos;?&apos;)</Display>
+    </Mask>
+    <System Ref="system_27"/>
+  </Block>
+  <Block BlockType="Mux" Name="Mux" SID="28">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[710, 142, 715, 248]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="ShowName">off</P>
+    <P Name="Inputs">3</P>
+    <P Name="DisplayOption">bar</P>
+  </Block>
+  <Block BlockType="Scope" Name="Scope" SID="29">
+    <PortCounts in="1"/>
+    <P Name="Position">[745, 179, 770, 211]</P>
+    <P Name="ZOrder">-6</P>
+    <P Name="ScopeSpecificationString">C++SS(StrPVP(&apos;Location&apos;,&apos;[563, 413, 1167, 942]&apos;),StrPVP(&apos;Open&apos;,&apos;off&apos;),MxPVP(&apos;AxesTitles&apos;,54,&apos;struct(&apos;&apos;axes1&apos;&apos;,&apos;&apos;%&lt;SignalLabel&gt;&apos;&apos;)&apos;),StrPVP(&apos;ShowLegends&apos;,&apos;off&apos;),StrPVP(&apos;TimeRange&apos;,&apos;10&apos;),StrPVP(&apos;YMin&apos;,&apos;-25&apos;),StrPVP(&apos;YMax&apos;,&apos;225&apos;),StrPVP(&apos;DataFormat&apos;,&apos;StructureWithTime&apos;),StrPVP(&apos;BlockParamSampleTime&apos;,&apos;0&apos;),StrPVP(&apos;LimitDataPoints&apos;,&apos;on&apos;),StrPVP(&apos;Decimation&apos;,&apos;1&apos;),StrPVP(&apos;BlockParamSampleInput&apos;,&apos;off&apos;))</P>
+    <P Name="NumInputPorts">1</P>
+    <P Name="Floating">off</P>
+  </Block>
+  <Block BlockType="SignalGenerator" Name="Square wave&#xA;source for generating&#xA;temperature values" SID="30">
+    <PortCounts out="1"/>
+    <P Name="Position">[40, 165, 85, 195]</P>
+    <P Name="ZOrder">-7</P>
+    <P Name="WaveForm">square</P>
+    <P Name="Amplitude">100</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="T_actual" SID="32">
+    <P Name="Position">[650, 222, 685, 238]</P>
+    <P Name="ZOrder">-9</P>
+    <P Name="OutDataTypeStr">single</P>
+    <P Name="RndMeth">Floor</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Bias" Name="bias" SID="31">
+    <P Name="Position">[110, 170, 150, 190]</P>
+    <P Name="ZOrder">-8</P>
+    <P Name="Bias">100</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">T_actual</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="UnitConversion" Name="cvt_uV_to_V" SID="50">
+    <P Name="Position">[330, 169, 355, 191]</P>
+    <P Name="ZOrder">3</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="z: jump to ADC example" SID="33">
+    <PortCounts/>
+    <P Name="Position">[362, 458, 443, 499]</P>
+    <P Name="ZOrder">-10</P>
+    <P Name="BackgroundColor">lightBlue</P>
+    <P Name="ShowName">off</P>
+    <P Name="OpenFcn">open_system(&apos;sldemo_adc_quantize&apos;,&apos;force&apos;)</P>
+    <Mask>
+      <Type>ADC quantizer details</Type>
+      <Display RunInitForIconRedraw="off">disp(&apos;ADC Quantizer\nDetails&apos;)</Display>
+      <Description>Jump to a model that exercises more details of the behavior of the Idealized ADC quantizer block that is part of the hardware model.</Description>
+    </Mask>
+    <System Ref="system_33"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="z: jump to prebuilt models" SID="35">
+    <PortCounts/>
+    <P Name="Position">[132, 463, 213, 504]</P>
+    <P Name="ZOrder">-11</P>
+    <P Name="BackgroundColor">lightBlue</P>
+    <P Name="ShowName">off</P>
+    <P Name="OpenFcn">open_system(&apos;sldemo_tc_blocks&apos;,&apos;force&apos;)</P>
+    <Mask>
+      <Type>ADC quantizer details</Type>
+      <Display RunInitForIconRedraw="off">disp(&apos;Additional\nThermocouple\nModels&apos;)</Display>
+      <Description>Jump to a model that exercises more details of the behavior of the Idealized ADC quantizer block that is part of the hardware model.</Description>
+    </Mask>
+    <System Ref="system_35"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="z: jump to table data file" SID="37">
+    <PortCounts/>
+    <P Name="Position">[597, 458, 678, 499]</P>
+    <P Name="ZOrder">-12</P>
+    <P Name="BackgroundColor">lightBlue</P>
+    <P Name="ShowName">off</P>
+    <P Name="OpenFcn">edit sldemo_create_tc_tabledata.m</P>
+    <Mask>
+      <Type>ADC quantizer details</Type>
+      <Display RunInitForIconRedraw="off">disp(&apos;Table Design\nDetails&apos;)</Display>
+      <Description>Jump to a model that exercises more details of the behavior of the Idealized ADC quantizer block that is part of the hardware model.</Description>
+    </Mask>
+    <System Ref="system_37"/>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">16#out:1</P>
+    <P Name="Dst">28#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">E</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1#out:1</P>
+    <P Name="Dst">50#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">bits</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">7#out:1</P>
+    <P Name="Dst">16#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">16#out:2</P>
+    <P Name="Dst">28#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">28#out:1</P>
+    <P Name="Dst">29#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">T_actual</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">31#out:1</P>
+    <P Name="Points">[40, 0]</P>
+    <Branch>
+      <P Name="ZOrder">7</P>
+      <P Name="Dst">1#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">8</P>
+      <P Name="Points">[0, 90; 440, 0]</P>
+      <P Name="Dst">32#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">30#out:1</P>
+    <P Name="Dst">31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">32#out:1</P>
+    <P Name="Dst">28#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">50#out:1</P>
+    <P Name="Dst">7#in:1</P>
+  </Line>
+  <Annotation SID="39">
+    <P Name="Name">Temperature measurement system
+A chain of components from 
+physical phenomenon to software values </P>
+    <P Name="Position">[251, 4, 570, 63]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="40">
+    <P Name="Name">1) The thermocouple model has  
+a polynomial for a Type S thermo-
+couple using data from NIST 
+Standard Database 60 as well 
+as a simple model of the probe
+and bead time constant.</P>
+    <P Name="Position">[51, 301, 245, 387]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ForegroundColor">blue</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="41">
+    <P Name="Name">2) The analog to digital converter 
+(ADC) subsystemincludes analog 
+scaling and filtering, plus a 
+sampled data quantizer.  
+Conversion time is not modeled 
+as it is typically ~2 orders of 
+magnitude smaller in time scale 
+compared to the rest of the 
+simulation.</P>
+    <P Name="Position">[296, 299, 491, 427]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ForegroundColor">blue</P>
+    <P Name="ZOrder">-3</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="42">
+    <P Name="Name">3) Two conversion techniques 
+are used  in the software
+specification to show some 
+of the options available for 
+modeling nonlinear behavior.</P>
+    <P Name="Position">[541, 304, 717, 376]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="HorizontalAlignment">left</P>
+    <P Name="ForegroundColor">blue</P>
+    <P Name="ZOrder">-4</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">12</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="43">
+    <P Name="Name">Continuous
+time</P>
+    <P Name="Position">[216, 89, 306, 129]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="44">
+    <P Name="Name">Discrete
+time</P>
+    <P Name="Position">[529, 89, 594, 129]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-6</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="45">
+    <P Name="Name">Continuous &amp;
+Discrete (mixed)</P>
+    <P Name="Position">[363, 89, 489, 129]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-7</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="46">
+    <P Name="Name">Look inside
+each subsystem:</P>
+    <P Name="Position">[45, 94, 176, 134]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ForegroundColor">red</P>
+    <P Name="ZOrder">-8</P>
+    <P Name="FontName">Arial</P>
+    <P Name="FontSize">16</P>
+    <P Name="FontWeight">bold</P>
+  </Annotation>
+  <Annotation SID="47">
+    <P Name="Name">Copyright 1990-2015 The MathWorks, Inc.</P>
+    <P Name="Position">[314, 521, 503, 536]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-9</P>
+  </Annotation>
+</System>
+
+__MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
+<?xml version="1.0" encoding="utf-8"?>
+<WindowsInfo>
+  <Object PropName="BdWindowsInfo" ObjectID="1" ClassName="Simulink.BDWindowsInfo">
+    <Object PropName="WindowsInfo" ObjectID="2" ClassName="Simulink.WindowInfo">
+      <P Name="IsActive" Class="logical">1</P>
+      <P Name="Location" Class="double">[58.0, 135.0, 852.0, 730.0]</P>
+      <Object PropName="ModelBrowserInfo" ObjectID="3" ClassName="Simulink.ModelBrowserInfo">
+        <P Name="Visible" Class="logical">0</P>
+        <P Name="DockPosition" Class="char">Left</P>
+        <P Name="Width" Class="int32">50</P>
+        <P Name="Height" Class="int32">50</P>
+        <P Name="Filter" Class="int32">9</P>
+        <P Name="Minimized" Class="char">Unset</P>
+      </Object>
+      <Object PropName="ExplorerBarInfo" ObjectID="4" ClassName="Simulink.ExplorerBarInfo">
+        <P Name="Visible" Class="logical">1</P>
+      </Object>
+      <Object PropName="EditorsInfo" ObjectID="5" ClassName="Simulink.EditorInfo">
+        <P Name="IsActive" Class="logical">1</P>
+        <P Name="IsTabbed" Class="logical">1</P>
+        <P Name="ViewObjType" Class="char">SimulinkTopLevel</P>
+        <P Name="LoadSaveID" Class="char">0</P>
+        <P Name="Extents" Class="double">[812.0, 494.0]</P>
+        <P Name="ZoomFactor" Class="double">1.0</P>
+        <P Name="Offset" Class="double">[0.0, -10.880859375]</P>
+        <P Name="SceneRectInView" Class="double">[0.0, -10.880859375, 812.0, 494.0]</P>
+      </Object>
+      <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
+        <Object ObjectID="6">
+          <P Name="Type" Class="char">Simulink:Editor:ReferencedFiles</P>
+          <P Name="ID" Class="char">Referenced Files</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char">{&quot;filterShowRefModels&quot;:&quot;true&quot;,&quot;filterShowRefSubs&quot;:&quot;true&quot;,&quot;filterShowOnlyDirtyFiles&quot;:&quot;false&quot;}
+</P>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Left</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+        <Object ObjectID="7">
+          <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
+          <P Name="ID" Class="char">Property Inspector</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char"/>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Right</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+      </Array>
+      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABiAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAiQD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAAAwAAAAAAAAAA/AEAAAAB+/////8AAAAAAP////8AAAJ5AP///wAAA1IAAAIrAAAAAQAAAAIAAAABAAAAAvwAAAABAAAAAgAAAAA=</P>
+      <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
+      <P Name="WindowUuid" Class="char">6639d2d0-4c41-4f93-8a5b-a9060d51c580</P>
+    </Object>
+    <P Name="BDUuid" Class="char">64b75008-82bf-462b-85ec-05f496200b54</P>
+  </Object>
+</WindowsInfo>
+
+__MWOPC_PACKAGE_END__

@@ -1,0 +1,16 @@
+MATLAB
+When solving a new problem with the MATLAB language, it’s often helpful to begin with existing code examples.
+
+Examples are highly readable MATLAB code files that show you how to solve problems or accomplish tasks such as curve fitting, plotting, and image processing.
+
+Thousands of code examples are available online and within MATLAB to get you started with your work project or homework assignment. Code examples let you learn new MATLAB approaches and techniques so you can focus on developing your application.
+
+
+Professionally Built
+MATLAB toolboxes are professionally developed, rigorously tested, and fully documented.
+
+With Interactive Apps
+MATLAB apps let you see how different algorithms work with your data. Iterate until you’ve got the results you want, then automatically generate a MATLAB program to reproduce or automate your work.
+
+And the Ability to Scale
+Scale your analyses to run on clusters, GPUs, and clouds with only minor code changes. There’s no need to rewrite your code or learn big data programming and out-of-memory techniques.
